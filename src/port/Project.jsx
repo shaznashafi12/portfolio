@@ -1,8 +1,8 @@
 import React from 'react'
 import img from '../images/dp.jpg'
-import img2 from '../images/gr1.jpg'
+import img2 from '../images/bacg.jpeg'
 import { Link } from 'react-router-dom';
-import img3 from '../images/frag.png'
+import img3 from '../images/lapp1.png'
 
 const Project = () => {
   return (
@@ -20,36 +20,43 @@ const Project = () => {
       </div>
       */}
 
-      <div className="h-[1000px] bg-cover bg-center pt-[200px]" style={{ backgroundImage: `url(${img2})` }}>
-        <h1 className="font-sans text-4xl font-bold text-center">PROJECTS</h1>
-        <div className="mx-auto w-8 pt-3 border-b-4 border-purple-500"></div>
-        <h6 className="text-xl text-black text-center mt-6 font-normal text-stone-500">
+      <div className="h-[1000px] bg-cover bg-center pt-[100px]" style={{ backgroundImage: `url(${img2})` }}>
+        <h1 className="font-sans text-gray-300 text-4xl font-bold  text-center">PROJECTS</h1>
+        <div className="mx-auto w-8 pt-3 border-b-4 border-gray-500"></div>
+        <h6 className="text-xl text-center mt-6 font-normal text-stone-400">
           Here you will find some of the personal and client projects that I created. 
           Each project<br></br> contains its own case study.
         </h6>
       
 
-     <div className="flex items-center mt-[150px] ms-[200px]">
-  <img className="h-[400px] w-[600px] rounded-lg object-cover" src={img3} alt="Project Visual"/>
-   <div className="ml-[100px] max-w-[500px]">
-    <h1 className="text-3xl font-bold text-black-800 mb-4">
-      FRAGRANZIA
-    </h1>
-    <h2 className="text-gray-500  leading-relaxed">
-      Fragranzia is a modern fragrance website that showcases a curated collection
-      of perfumes and scents. It blends elegant design with smooth functionality,
-      allowing users to explore different fragrances, learn their notes, and
-      discover the perfect scent for every mood and occasion.
-    </h2>
-    <Link to="">
-            <button className="w-56 h-14 mt-7 rounded-lg font-bold bg-violet-500 text-white hover:bg-violet-600">
-              Case Study
-            </button>
-          </Link>
-  </div>
-</div>
+     <div className="flex justify-center mt-[100px]">
+          <div className="bg-stone-200 rounded-2xl shadow-lg overflow-hidden w-[500px] transition-transform duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer">
+            
+            <img
+              src={img3}
+              alt="Fragranzia Project"
+              className=" items-center ml-20 mt-10 h-[250px] w-[400px] object-cover"
+            />
 
-    </div>
+            <div className="p-6 text-center">
+              <h2 className="text-2xl font-bold text-gray-800 mb-3">
+                FRAGRANZIA
+              </h2>
+              <p className="text-gray-500 text-sm leading-relaxed mb-5">
+                Fragranzia is a modern fragrance website that showcases a curated collection
+                of perfumes and scents. It blends elegant design with smooth functionality,
+                allowing users to explore and discover the perfect scent for every mood.
+              </p>
+              <Link to="">
+                <button className="w-36 h-12 rounded-lg font-bold bg-violet-500 text-white hover:bg-violet-600 transition-colors duration-300">
+                  Case Study
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import img2 from '../images/gr1.jpg'
+import img2 from '../images/bacg.jpeg'
 import { FaLinkedin } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <div id='contact'> 
          <div className="h-[1000px] bg-cover bg-center pt-[200px]" style={{ backgroundImage: `url(${img2})` }}>
-                <h1 className="font-sans text-4xl font-bold text-center">CONTACT</h1>
+                <h1 className="font-sans text-gray-300 text-4xl font-bold text-center">CONTACT</h1>
                 <div className="mx-auto w-8 pt-3 border-b-4 border-purple-500"></div>
                 <h6 className="text-xl text-black text-center mt-6 font-normal text-stone-500">
                   Feel free to Contact me by submitting the form below and I will get back
@@ -46,7 +46,7 @@ const Contact = () => {
           </button>
         </form>
                 </div>
-              <footer className="bg-black text-stone-100 py-16">
+              <footer className="bg-gray-100 text-stone-100 py-16">
         <div className="container mx-auto px-8 flex flex-col md:flex-row justify-between items-start md:items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h1 className="text-3xl font-bold mb-3">SHAZNA SHAFI</h1>
