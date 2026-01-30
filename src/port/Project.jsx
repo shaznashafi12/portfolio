@@ -1,7 +1,5 @@
 import React from 'react'
-import img from '../images/dp.jpg'
 import img2 from '../images/bacg.jpeg'
-import { Link } from 'react-router-dom'
 import img3 from '../images/frag2.png'
 import img4 from '../images/weather.png'
 import img5 from '../images/movie.png'
@@ -29,7 +27,7 @@ const Project = () => {
           
           {/* CARD 1 */}
           <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden w-[380px] sm:w-full max-w-sm hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition duration-500 cursor-pointer border border-white/30">
-            <img src={img3} className="h-[240px] w-[80%] sm:w-[90%] object-cover mx-auto mt-6 rounded-xl" />
+            <img src={img3} alt='fragrancia' className="h-[240px] w-[80%] sm:w-[90%] object-cover mx-auto mt-6 rounded-xl" />
             <div className="p-6 text-center">
               <h2 className="text-2xl sm:text-xl font-bold text-white mb-3 tracking-wide">Fragrancia</h2>
               <p className="text-gray-200 text-sm leading-relaxed mb-5">
@@ -48,7 +46,7 @@ const Project = () => {
 
           {/* CARD 2 */}
           <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden w-[380px] sm:w-full max-w-sm hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition duration-500 cursor-pointer border border-white/30">
-            <img src={img4} className="h-[240px] w-[80%] sm:w-[90%] object-cover mx-auto mt-6 rounded-xl" />
+            <img src={img4} alt='weather' className="h-[240px] w-[80%] sm:w-[90%] object-cover mx-auto mt-6 rounded-xl" />
             <div className="p-6 text-center">
               <h2 className="text-2xl sm:text-xl font-bold text-white mb-3 tracking-wide">Weather App</h2>
               <p className="text-gray-200 text-sm leading-relaxed mb-5">
@@ -67,7 +65,7 @@ const Project = () => {
 
           {/* CARD 3 */}
           <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden w-[380px] sm:w-full max-w-sm hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition duration-500 cursor-pointer border border-white/30">
-            <img src={img5} className="h-[240px] w-[80%] sm:w-[90%] object-cover mx-auto mt-6 rounded-xl" />
+            <img src={img5} alt='movie' className="h-[240px] w-[80%] sm:w-[90%] object-cover mx-auto mt-6 rounded-xl" />
             <div className="p-6 text-center">
               <h2 className="text-2xl sm:text-xl font-bold text-white mb-3 tracking-wide">Movie App</h2>
               <p className="text-gray-200 text-sm leading-relaxed mb-5">
