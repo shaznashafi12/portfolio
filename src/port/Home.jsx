@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../images/dp.jpg'
+import img from '../images/port.jpeg'
 import bg from '../images/bgg2.jpeg'
 import { Link } from 'react-router-dom'
 import { FaLinkedin } from "react-icons/fa";
