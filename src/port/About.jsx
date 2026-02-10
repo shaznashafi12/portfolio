@@ -81,7 +81,7 @@ const About = () => {
             <div className="flex flex-wrap gap-4">
               {[
                 "HTML", "CSS", "JavaScript", "React",
-                "Bootstrap", "Tailwind", "PHP", "GitHub"
+                "Bootstrap", "Tailwind", "Mongodb","Node", "GitHub"
               ].map((skill) => (
                 <div
                   key={skill}
