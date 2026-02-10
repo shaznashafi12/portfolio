@@ -14,7 +14,7 @@ const Contact = () => {
         CONTACT
       </h1>
 
-      <div className="mx-auto w-16 pt-3 border-b-4 border-purple-500 shadow-md"></div>
+        <div className="mx-auto w-16 pt-3 border-b-4 border-gray-400 shadow-md"></div>
 
       <h6 className="text-lg sm:text-xl text-center mt-6 text-gray-300 tracking-wide leading-relaxed max-w-3xl mx-auto">
         Feel free to contact me by submitting the form below and I will get back to you as soon as possible.

@@ -24,7 +24,7 @@ const Home = () => {
               className="h-12 w-12 rounded-full border border-white/20 
               shadow-[0_0_15px_rgba(255,255,255,0.15)]"
             />
-            <h2 className="text-[20px] sm:text-[22px] font-semibold tracking-wider bg-gradient-to-r 
+            <h2 className="text-[10px] sm:text-[22px] font-semibold tracking-wider bg-gradient-to-r 
               from-white via-gray-200 to-gray-400 bg-clip-text text-transparent whitespace-nowrap">
               Shazna Shafi
             </h2>
