@@ -110,9 +110,18 @@ const Contact = () => {
               SOCIAL
             </h2>
             <div className="flex justify-center md:justify-end gap-6">
-              <FaLinkedin className="w-8 h-8 text-gray-200 hover:text-gray-500 transition duration-300 cursor-pointer" />
-              <IoLogoGithub className="w-8 h-8 text-gray-200 hover:text-gray-500 transition duration-300 cursor-pointer" />
-            </div>
+               <a
+    href="https://www.linkedin.com/in/shazna-shafi-44758736a/"
+      target="_blank"
+      rel="noopener noreferrer"
+    ><FaLinkedin className="w-8 h-8 text-gray-200 hover:text-gray-500 transition duration-300 cursor-pointer" />
+            </a>    <a
+    href="https://github.com/shaznashafi12"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+<IoLogoGithub className="w-8 h-8 text-gray-200 hover:text-gray-500 transition duration-300 cursor-pointer" />
+            </a></div>
           </div>
         </div>
 
