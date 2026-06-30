@@ -1,19 +1,22 @@
-import { useMemo } from "react"
-import { motion } from "framer-motion"   // ❗ IMPORTANT
-                                             
-const ScatteredName = ({ name }) => {
-  const letters = name.split("")
+import { useMemo } from "react";
+import { motion } from "framer-motion";
 
+const ScatteredName = ({ name }) => {
   const positions = useMemo(() => {
-    const vw = typeof window !== "undefined" ? window.innerWidth  : 1200
-    const vh = typeof window !== "undefined" ? window.innerHeight : 800
+    const letters = name.split("");
+
+    const vw = typeof window !== "undefined" ? window.innerWidth : 1200;
+    const vh = typeof window !== "undefined" ? window.innerHeight : 800;
+
     return letters.map(() => ({
-      x:      (Math.random() - 0.5) * vw  * 0.85,
-      y:      (Math.random() - 0.5) * vh  * 0.75,
+      x: (Math.random() - 0.5) * vw * 0.85,
+      y: (Math.random() - 0.5) * vh * 0.75,
       rotate: (Math.random() - 0.5) * 600,
-      scale:  Math.random() * 0.6 + 0.2,
-    }))
-  }, [])
+      scale: Math.random() * 0.6 + 0.2,
+    }));
+  }, [name]);
+
+  const letters = name.split("");
 
   return (
     <h1
@@ -48,7 +51,7 @@ const ScatteredName = ({ name }) => {
         </motion.span>
       ))}
     </h1>
-  )
-}
+  );
+};
 
-export default ScatteredName   // ❗ IMPORTANT
+export default ScatteredName;
