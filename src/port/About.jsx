@@ -6,26 +6,8 @@ import {
 } from "react-icons/fa"
 import { SiTailwindcss, SiMongodb, SiExpress } from "react-icons/si"
 
-<style jsx>{`
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-
-  .hide-scrollbar {
-    -ms-overflow-style: none; /* IE & Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-  }
-`}</style>
 const About = () => {
-  const [hoveredSkill, setHoveredSkill] = useState(null)
+const [activeSkill, setActiveSkill] = useState(null)
   const [flippedCard, setFlippedCard] = useState(false)
 
   const skills = [
@@ -189,14 +171,14 @@ className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tl from-rose-500
           className="max-w-5xl mx-auto mb-24 perspective-1000"
         >
           <motion.div
-            className="relative h-[600px] sm:h-[500px]"
+            className="relative h-[850px] sm:h-[500px]"
             style={{ transformStyle: "preserve-3d" }}
             animate={{ rotateY: flippedCard ? 180 : 0 }}
             transition={{ duration: 0.8, type: "spring" }}
             onClick={() => setFlippedCard(!flippedCard)}
           >
             {/* Front Side */}
-            <div className="absolute inset-0 backface-hidden">
+            <div className="absolute inset-0 backface-hidden overflow-hidden">
               <div className="h-full backdrop-blur-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent border border-white/20 rounded-3xl shadow-2xl p-10 sm:p-14 cursor-pointer group hover:border-amber-400/40 transition-all duration-500">
                 
                 <motion.div
@@ -335,18 +317,21 @@ style={{ fontFamily: "'Playfair Display', 'Inter', serif" }}
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
             {skills.map((skill, i) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05, type: "spring", stiffness: 200 }}
-                whileHover={{ y: -12, scale: 1.1 }}
-                onHoverStart={() => setHoveredSkill(i)}
-                onHoverEnd={() => setHoveredSkill(null)}
-                className="relative group cursor-pointer"
-              >
-                {/* Skill Card */}
+<motion.div
+  key={skill.name}
+  initial={{ opacity: 0, scale: 0.5 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ delay: i * 0.05, type: "spring", stiffness: 200 }}
+  whileHover={{ y: -12, scale: 1.1 }}
+  whileTap={{ y: -12, scale: 1.05 }}
+  onHoverStart={() => setActiveSkill(i)}
+  onHoverEnd={() => setActiveSkill(null)}
+  onClick={() =>
+    setActiveSkill(activeSkill === i ? null : i)
+  }
+  className="relative group cursor-pointer"
+>                {/* Skill Card */}
                 <div className={`
                   relative overflow-hidden
                   bg-gradient-to-br ${skill.color} p-[2px] rounded-2xl
@@ -357,7 +342,7 @@ style={{ fontFamily: "'Playfair Display', 'Inter', serif" }}
                     
 
 <motion.div
-  animate={{ rotate: hoveredSkill === i ? 360 : 0 }}
+animate={{ rotate: activeSkill === i ? 360 : 0 }}
   transition={{ duration: 0.6 }}
   className="flex items-center justify-center text-white"
 >
@@ -371,10 +356,10 @@ style={{ fontFamily: "'Playfair Display', 'Inter', serif" }}
                     <motion.div
                       className="w-full"
                       initial={{ opacity: 0, height: 0 }}
-                      animate={{
-                        opacity: hoveredSkill === i ? 1 : 0,
-                        height: hoveredSkill === i ? "auto" : 0,
-                      }}
+                   animate={{
+  opacity: activeSkill === i ? 1 : 0,
+  height: activeSkill === i ? "auto" : 0,
+}}
                       transition={{ duration: 0.3 }}
                     >
                       <div className="text-center mb-2">
@@ -386,8 +371,9 @@ style={{ fontFamily: "'Playfair Display', 'Inter', serif" }}
                         <motion.div
                           className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
                           initial={{ width: 0 }}
-                          animate={{ width: hoveredSkill === i ? `${skill.level}%` : 0 }}
-                          transition={{ duration: 0.8, ease: "easeOut" }}
+animate={{
+  width: activeSkill === i ? `${skill.level}%` : 0
+}}                          transition={{ duration: 0.8, ease: "easeOut" }}
                         />
                       </div>
                     </motion.div>
@@ -436,6 +422,13 @@ style={{ fontFamily: "'Playfair Display', 'Inter', serif" }}
         }
         .backface-hidden {
           backface-visibility: hidden;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
         }
       `}</style>
     </div>

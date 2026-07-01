@@ -90,9 +90,9 @@ useEffect(() => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-2xl border-b border-white/[0.04]"
       >
-<nav className="max-w-7xl mx-auto h-20 grid grid-cols-3 items-center px-8 sm:px-14">
+<nav className="max-w-7xl mx-auto h-20 flex justify-between items-center md:grid md:grid-cols-3 px-8 sm:px-14">
           {/* Logo / Name */}
-<div className="flex -ml-36 items-center gap-4 justify-start"            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+<div className="flex items-center gap-4 justify-start md:-ml-36"            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
@@ -158,7 +158,7 @@ useEffect(() => {
           </ul>
 
           {/* Resume Button — Desktop */}
-<div className="flex justify-end -mr-36">
+<div className="hidden md:flex justify-end md:-mr-36">
   <motion.a
     href="/Shazna_Shafi_Resume.pdf"
 download="Shazna_Shafi_Resume.pdf"
@@ -347,8 +347,7 @@ download="Shazna_Shafi_Resume.pdf"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
+className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2"        >
           <span className="text-[9px] uppercase tracking-[0.35em] text-gray-500">Scroll</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
@@ -384,22 +383,29 @@ download="Shazna_Shafi_Resume.pdf"
           <div className="w-[1px] h-20 bg-gradient-to-b from-white/10 to-transparent" />
         </motion.div>
 
-        {/* Social Bar — Mobile */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.8 }}
-          className="md:hidden absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-8 px-8 py-3 bg-white/[0.04] border border-white/[0.07] rounded-full backdrop-blur-xl"
-        >
-          {[
-            { Icon: FaLinkedin, href: "https://www.linkedin.com/in/shazna-shafi-44758736a/" },
-            { Icon: IoLogoGithub, href: "https://github.com/shaznashafi12" },
-          ].map(({ Icon, href }, i) => (
-            <motion.a key={i} whileTap={{ scale: 0.85 }} href={href} target="_blank" rel="noopener noreferrer">
-              <Icon className="h-4 w-4 text-white/40 active:text-amber-300 transition-colors" />
-            </motion.a>
-          ))}
-        </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 1.8 }}
+  className="md:hidden fixed bottom-6 inset-x-0 flex justify-center z-[999]"
+>
+  <div className="flex items-center gap-8 px-8 py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-xl">
+    {[
+      { Icon: FaLinkedin, href: "https://www.linkedin.com/in/shazna-shafi-44758736a/" },
+      { Icon: IoLogoGithub, href: "https://github.com/shaznashafi12" },
+    ].map(({ Icon, href }, i) => (
+      <motion.a
+        key={i}
+        whileTap={{ scale: 0.85 }}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon className="h-5 w-5 text-white/60 active:text-amber-300 transition-colors" />
+      </motion.a>
+    ))}
+  </div>
+</motion.div>
       </section>
     </div>
   )

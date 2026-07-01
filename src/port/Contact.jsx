@@ -178,15 +178,14 @@ useEffect(() => {
         </motion.div>
 
         {/* ── Grid ── */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-
+<div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left — Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="space-y-4"
+className="space-y-4 flex flex-col"
           >
             {contactInfo.map((info, i) => (
               <motion.div
@@ -213,16 +212,14 @@ useEffect(() => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="mt-2 p-6 backdrop-blur-md bg-white/[0.05] border border-white/15 rounded-2xl"
-            >
+className="mt-2 p-6 backdrop-blur-md bg-white/[0.05] border border-white/15 rounded-2xl flex-1"            >
               <span className="text-3xl text-amber-400/30 leading-none block mb-2">"</span>
               <p className="text-gray-400 text-sm leading-relaxed italic"
                 style={{ fontFamily: "'Crimson Pro', serif" }}>
                 Great things are built through collaboration and communication. Let's create something amazing together.
               </p>
-              <div className="w-12 h-px bg-gradient-to-r from-amber-400 to-transparent mt-4" />
-            </motion.div>
           </motion.div>
+         </motion.div>
 
           {/* Right — Form */}
           <motion.div
@@ -349,12 +346,9 @@ useEffect(() => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-20 -ml-16 w-[1280px] h-[350px] backdrop-blur-md bg-white/[0.05] h-[300px] border border-white/15 rounded-2xl py-10 px-6 sm:px-10"
-        >
-          <div className="grid sm:grid-cols-2 gap-8 items-center">
-            {/* Name + tagline */}
-            <div>
-              <h3
+className="mt-20 w-full lg:w-[1280px] lg:-ml-16 lg:h-[350px] border border-white/15 rounded-2xl backdrop-blur-md bg-white/[0.05] py-10 px-6 sm:px-10 mx-auto">    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">  
+          {/* Name + tagline */}
+<div className="text-center sm:text-left">              <h3
                 className="text-xl font-bold mb-1.5 bg-gradient-to-r from-amber-200 to-rose-200 bg-clip-text text-transparent"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
@@ -371,10 +365,9 @@ useEffect(() => {
             </div>
 
             {/* Socials */}
-            <div className="sm:text-right">
-              <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">Find me on</p>
-              <div className="flex sm:justify-end gap-3">
-                {socials.map(({ Icon, href, color }, i) => (
+<div className="text-center sm:text-right">
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">Find me on</p>
+<div className="flex justify-center sm:justify-end gap-3">                {socials.map(({ Icon, href, color }, i) => (
                   <motion.a
                     key={i}
                     href={href}
@@ -394,9 +387,8 @@ useEffect(() => {
             </div>
           </div>
 
-          <div className="w-[1000px] mt-32 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent my-8" />
-
-          <p className="text-center text-xs text-gray-600 tracking-wider">
+<div className="w-full lg:w-[1000px] mx-auto mt-[150px] h-px bg-gradient-to-r from-transparent via-white/15 to-transparent my-8" />     
+          <p className="text-center  -mt-2 text-xs text-gray-600 tracking-wider">
             © 2025 Shazna Shafi 
           </p>
         </motion.footer>
