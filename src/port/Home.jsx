@@ -160,8 +160,8 @@ useEffect(() => {
           {/* Resume Button — Desktop */}
 <div className="hidden md:flex justify-end md:-mr-36">
   <motion.a
-    href="/Shazna_Shafi_Resume.pdf"
-download="Shazna_Shafi_Resume.pdf"
+    href="/SHAZNA_SHAFI_Resume.pdf"
+download="SHAZNA_SHAFI_Resume.pdf"
     whileHover={{ y: -3, scale: 1.04, boxShadow: "0 12px 28px rgba(251,191,36,0.25)" }}
     whileTap={{ y: 0, scale: 0.97 }}
     transition={{ type: "spring", stiffness: 300, damping: 18 }}
@@ -210,8 +210,8 @@ download="Shazna_Shafi_Resume.pdf"
               <li className="px-10 py-4">
                 
                  <a 
-                href="/Shazna_Shafi_Resume.pdf"
-download="Shazna_Shafi_Resume.pdf"
+                href="/SHAZNA_SHAFI_Resume.pdf"
+download="SHAZNA_SHAFI_Resume.pdf"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-amber-300/70 hover:text-amber-300 active:scale-95 transition-transform"
                 >
