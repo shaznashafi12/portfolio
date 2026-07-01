@@ -229,8 +229,8 @@ style={{ fontFamily: "'Playfair Display', 'Inter', serif" }}
                     </Link>
                     
                     <motion.a
-                     href="/SHAZNA_SHAFI_Resume.pdf"
-                     download="SHAZNA_SHAFI_Resume.pdf"
+                     href="/SHAZNA_SHAFI.Resume.pdf"
+                     download="SHAZNA_SHAFI.Resume.pdf"
                       whileHover={{ scale: 1.03, y: -2 }}
                       whileTap={{ scale: 0.98 }}
                       className="flex-1 px-8 py-4 bg-white/5 border border-white/20 rounded-2xl text-gray-300 font-semibold tracking-wider uppercase text-sm backdrop-blur-xl hover:border-white/40 hover:bg-white/10 transition-all flex items-center justify-center gap-2"
