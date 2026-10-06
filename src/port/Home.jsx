@@ -7,7 +7,7 @@ import { FaLinkedin, FaDownload } from "react-icons/fa"
 import { IoLogoGithub } from "react-icons/io"
 import { FiMenu, FiX } from "react-icons/fi"
 import ScatteredName from "../components/ScatteredName"
-
+import resume from "../images/SHAZNA_SHAFI.Resume.pdf"
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
@@ -159,17 +159,21 @@ useEffect(() => {
 
           {/* Resume Button — Desktop */}
 <div className="hidden md:flex justify-end md:-mr-36">
-  <motion.a
-    href="/SHAZNA_SHAFI.Resume.pdf"
-download="SHAZNA_SHAFI.Resume.pdf"
-    whileHover={{ y: -3, scale: 1.04, boxShadow: "0 12px 28px rgba(251,191,36,0.25)" }}
-    whileTap={{ y: 0, scale: 0.97 }}
-    transition={{ type: "spring", stiffness: 300, damping: 18 }}
-    className="hidden md:flex items-center gap-2 px-5 py-2.5 border border-white/10 rounded-full text-[10px] uppercase tracking-[0.18em] text-amber-200/80 hover:border-amber-400/40 hover:text-amber-200 backdrop-blur-xl transition-all duration-300"
-  >
-    <FaDownload className="text-[10px]" />
-    Resume
-  </motion.a>
+ <motion.a
+  href={resume}
+  download="SHAZNA_SHAFI.Resume.pdf"
+  whileHover={{
+    y: -3,
+    scale: 1.04,
+    boxShadow: "0 12px 28px rgba(251,191,36,0.25)"
+  }}
+  whileTap={{ y: 0, scale: 0.97 }}
+  transition={{ type: "spring", stiffness: 300, damping: 18 }}
+  className="hidden md:flex items-center gap-2 px-5 py-2.5 border border-white/10 rounded-full text-[10px] uppercase tracking-[0.18em] text-amber-200/80 hover:border-amber-400/40 hover:text-amber-200 backdrop-blur-xl transition-all duration-300"
+>
+  <FaDownload className="text-[10px]" />
+  Resume
+</motion.a>
 </div>          {/* Mobile Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -209,14 +213,15 @@ download="SHAZNA_SHAFI.Resume.pdf"
               {/* FIX 3: restored missing <a tag */}
               <li className="px-10 py-4">
                 
-                 <a 
-                href="/SHAZNA_SHAFI.Resume.pdf"
-download="SHAZNA_SHAFI.Resume.pdf"
-                  onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-amber-300/70 hover:text-amber-300 active:scale-95 transition-transform"
-                >
-                  <FaDownload className="text-[10px]" /> Download Resume
-                </a>
+          <a
+  href={resume}
+  download="SHAZNA_SHAFI.Resume.pdf"
+  onClick={() => setMenuOpen(false)}
+  className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-amber-300/70 hover:text-amber-300 active:scale-95 transition-transform"
+>
+  <FaDownload className="text-[10px]" />
+  Download Resume
+</a>
               </li>
             </ul>
           </motion.div>
